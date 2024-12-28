@@ -15,8 +15,7 @@ export default function Home() {
           <Image src="/illustration-dashboard.png" alt="dashboard" width={140} height={100} className="h-full w-full"/>
         </div>
         <div className="bottom-content bg-red-500 flex-1 flex flex-col content-end">
-          <div className="socialMedia">
-            <a href=""></a>
+          <div className="socialMedia flex">
           </div>
           <div>&copy; Copyright Ping. All rights reserved.</div>
         </div>
@@ -24,4 +23,3 @@ export default function Home() {
     </div>
   );
 }
-{}
