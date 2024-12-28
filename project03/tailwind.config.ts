@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
 
+
 export default {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -11,6 +12,10 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        blue: 'hsl(223, 87%, 63%)',
+        paleBlue: 'hsl(223, 100%, 88%)',
+        lightRed: 'hsl(354, 100%, 66%)',
+        gray: 'hsl(0, 0%, 59%)',
       },
 
       screens: {
