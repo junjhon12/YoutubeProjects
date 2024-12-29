@@ -19,8 +19,11 @@ export default {
       },
 
       screens: {
-        //Mobile Devices
-        'iphone-12pro': { 'raw': '(min-width: 390px) and (max-width: 844px)' },
+        // Target mobile devices with 375px width as the baseline
+        mobile: "375px",
+
+        // Target desktop devices with 1440px as the upper limit
+        desktop: "1440px",
       },
     },
   },
