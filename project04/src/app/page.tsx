@@ -1,4 +1,4 @@
-"use client";
+"use client"; // Specifies this is client-side code (React/Next.js feature)
 import { useState } from "react";
 import Image from "next/image";
 
@@ -8,13 +8,23 @@ export default function Home() {
   const toggleSidebar = () => {
     setSidebarVisible(!sidebarVisible);
   };
+
   return (
-    <div className=" mobile:mx-5 mobile:mt-5">
-      <div className="navigation mobile:flex mobile:place-content-between mobile:items-center mobile:mb-5">
+    <div className="relative mobile:mx-5 mobile:mt-5">
+      {/* Grayish overlay */}
+      {sidebarVisible && (
+        <div
+          className="fixed top-0 left-0 w-full h-full bg-gray-700 opacity-50 z-10"
+          onClick={toggleSidebar} // Close the sidebar when clicking the overlay
+        ></div>
+      )}
+
+      {/* Navigation bar */}
+      <div className="navigation mobile:flex mobile:place-content-between mobile:items-center mb-5">
         <div>
           <Image src="/logo.svg" alt="logo" width={50} height={50} />
         </div>
-        <div onClick={toggleSidebar}>
+        <div onClick={toggleSidebar} className="lg:hidden">
           <Image
             src="/icon-menu.svg"
             alt="menu"
@@ -23,43 +33,65 @@ export default function Home() {
             className="hover:cursor-pointer"
           />
         </div>
-        {/* Sidebar */}
-        <div
-          className={`fixed top-0 right-0 h-full w-4/6 bg-OffWhite z-2 transform ${
-            sidebarVisible ? "translate-x-0" : "translate-x-full"
-          } transition-transform duration-300`}
-        >
-          <div className="flex justify-end p-5 mb-10">
-            <div onClick={toggleSidebar} className="hover:cursor-pointer">
-              <Image
-                src="/icon-menu-close.svg"
-                alt="close"
-                width={30}
-                height={30}
-              />
-            </div>
-          </div>
-          <ul className="p-5 space-y-6">
-            <li className="hover:text-SoftRed cursor-pointer font-bold text-1xs text-Verydarkblue">
-              Home
-            </li>
-            <li className="hover:text-SoftRed cursor-pointer font-bold text-1xs text-Verydarkblue">
-              New
-            </li>
-            <li className="hover:text-SoftRed cursor-pointer font-bold text-1xs text-Verydarkblue">
-              Popular
-            </li>
-            <li className="hover:text-SoftRed cursor-pointer font-bold text-1xs text-Verydarkblue">
-              Trending
-            </li>
-            <li className="hover:text-SoftRed cursor-pointer font-bold text-1xs text-Verydarkblue">
-              Categories
-            </li>
-          </ul>
-        </div>
+
+        {/* Top navigation bar for desktop */}
+        <ul className="hidden lg:flex lg:space-x-8 lg:items-center">
+          <li className="hover:text-SoftRed cursor-pointer font-bold text-sm text-Verydarkblue">
+            Home
+          </li>
+          <li className="hover:text-SoftRed cursor-pointer font-bold text-sm text-Verydarkblue">
+            New
+          </li>
+          <li className="hover:text-SoftRed cursor-pointer font-bold text-sm text-Verydarkblue">
+            Popular
+          </li>
+          <li className="hover:text-SoftRed cursor-pointer font-bold text-sm text-Verydarkblue">
+            Trending
+          </li>
+          <li className="hover:text-SoftRed cursor-pointer font-bold text-sm text-Verydarkblue">
+            Categories
+          </li>
+        </ul>
       </div>
+
+      {/* Sidebar */}
+      <div
+        className={`fixed top-0 right-0 h-full w-4/6 bg-OffWhite z-20 transform ${
+          sidebarVisible ? "translate-x-0" : "translate-x-full"
+        } transition-transform duration-300`}
+      >
+        <div className="flex justify-end p-5 mb-10">
+          <div onClick={toggleSidebar} className="hover:cursor-pointer">
+            <Image
+              src="/icon-menu-close.svg"
+              alt="close"
+              width={30}
+              height={30}
+            />
+          </div>
+        </div>
+        <ul className="p-5 space-y-6">
+          <li className="hover:text-SoftRed cursor-pointer font-bold text-1xs text-Verydarkblue">
+            Home
+          </li>
+          <li className="hover:text-SoftRed cursor-pointer font-bold text-1xs text-Verydarkblue">
+            New
+          </li>
+          <li className="hover:text-SoftRed cursor-pointer font-bold text-1xs text-Verydarkblue">
+            Popular
+          </li>
+          <li className="hover:text-SoftRed cursor-pointer font-bold text-1xs text-Verydarkblue">
+            Trending
+          </li>
+          <li className="hover:text-SoftRed cursor-pointer font-bold text-1xs text-Verydarkblue">
+            Categories
+          </li>
+        </ul>
+      </div>
+
       <div className="container1 mobile:flex mobile:flex-col mb-20">
         <div>
+          {/* Main image */}
           <Image
             src="/image-web-3-mobile.jpg"
             alt="picture1"
@@ -72,14 +104,15 @@ export default function Home() {
           The Bright Future of Web 3.0?
         </div>
         <div className="mb-5 text-Darkgrayishblue">
-          We dive into the next evolution of the web that claims t oput the
+          We dive into the next evolution of the web that claims to put the
           power of the platforms back into the hands of the people. But is it
           really fulfilling its promise?
         </div>
         <div className="">
+          {/* Button that could lead to more content */}
           <button
             type="button"
-            className="bg-SoftRed py-3 px-10 font-bold tracking-widest "
+            className="bg-SoftRed py-3 px-10 font-bold tracking-widest hover:cursor-pointer"
           >
             Read More
           </button>
@@ -113,6 +146,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+
       <div className="container3 mb-28">
         <div className="flex mb-5">
           <div className="flex-0">
@@ -146,7 +180,7 @@ export default function Home() {
               Top 10 Laptops of 2022
             </div>
             <div className="text-Darkgrayishblue">
-              Our best picks for vaious needs and budgets.
+              Our best picks for various needs and budgets.
             </div>
           </div>
         </div>
