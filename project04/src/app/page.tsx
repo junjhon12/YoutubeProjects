@@ -1,16 +1,23 @@
-"use client"; // Specifies this is client-side code (React/Next.js feature)
+"use client"; // This tells React we’re working on the user’s side (the browser).
+
+// We need some tools from React to help us remember things (like if the menu is open or closed).
 import { useState } from "react";
+// We’re going to use pictures, so we import a tool to show images.
 import Image from "next/image";
 
+// This is where we build our web page!
 export default function Home() {
+  // Imagine this as a light switch. It remembers if the sidebar is ON (open) or OFF (closed).
   const [sidebarVisible, setSidebarVisible] = useState(false);
 
+  // This is like pressing the light switch to turn the sidebar ON or OFF.
   const toggleSidebar = () => {
-    setSidebarVisible(!sidebarVisible);
+    setSidebarVisible(!sidebarVisible); // Flip it! If it's ON, turn it OFF. If it's OFF, turn it ON.
   };
 
   return (
     <div className="relative mobile:mx-5 mobile:mt-5">
+      {/* This is a gray curtain that shows up when the sidebar is open. */}
       {/* Grayish overlay */}
       {sidebarVisible && (
         <div
@@ -18,12 +25,13 @@ export default function Home() {
           onClick={toggleSidebar} // Close the sidebar when clicking the overlay
         ></div>
       )}
-
+      {/* This is the bar at the top where we put the logo and menu button. */}
       {/* Navigation bar */}
       <div className="navigation mobile:flex mobile:place-content-between mobile:items-center mb-5">
         <div>
           <Image src="/logo.svg" alt="logo" width={50} height={50} />
         </div>
+        {/* This is the button to open the sidebar (only shows on small screens). */}
         <div onClick={toggleSidebar} className="lg:hidden">
           <Image
             src="/icon-menu.svg"
@@ -53,7 +61,7 @@ export default function Home() {
           </li>
         </ul>
       </div>
-
+      {/* This is the sidebar that slides in and out! */}
       {/* Sidebar */}
       <div
         className={`fixed top-0 right-0 h-full w-4/6 bg-OffWhite z-20 transform ${
