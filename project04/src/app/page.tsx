@@ -58,7 +58,6 @@ export default function Home() {
           </ul>
         </div>
       </div>
-
       <div className="container1 mobile:flex mobile:flex-col mb-20">
         <div>
           <Image
