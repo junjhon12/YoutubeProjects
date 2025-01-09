@@ -16,7 +16,7 @@ export default function Home() {
   };
 
   return (
-    <div className="relative mobile:mx-5 mobile:mt-5 desktop:grid desktop:col-start-1 desktop:col-end-10 desktop:row-start-1 desktop:row-end-10 desktop:m-40">
+    <div className="relative mobile:mx-5 mobile:mt-5 desktop:grid desktop:col-start-1 desktop:col-end-10 desktop:row-start-1 desktop:row-end-10 desktop:m-20">
       {/* This is a gray curtain that shows up when the sidebar is open. */}
       {/* Grayish overlay */}
       {sidebarVisible && (
@@ -29,7 +29,7 @@ export default function Home() {
       {/* Navigation bar */}
       <div className="navigation mobile:flex mobile:place-content-between mobile:items-center mb-5 desktop:col-start-1 desktop:col-end-11 desktop:row-start-1 desktop:row-end-2 desktop:mb-5">
         <div className="">
-          <Image src="/logo.svg" alt="logo" width={50} height={50} />
+          <Image src="/logo.svg" alt="logo" width={50} height={50} className="desktop:h-35 desktop:w-auto "/>
         </div>
         {/* This is the button to open the sidebar (only shows on small screens). */}
         <div onClick={toggleSidebar} className="lg:hidden">
@@ -43,20 +43,20 @@ export default function Home() {
         </div>
 
         {/* Top navigation bar for desktop */}
-        <ul className="hidden lg:flex lg:space-x-8 lg:items-center desktop:col-start-1 desktop:col-end-11 desktop:row-start-1 desktop:row-end-2">
-          <li className="hover:text-SoftRed cursor-pointer font-bold text-sm text-Verydarkblue">
+        <ul className="hidden lg:flex lg:space-x-8 lg:items-center desktop:col-start-1 desktop:col-end-11 desktop:row-start-1 desktop:row-end-2 desktop:mb-10">
+          <li className="hover:text-SoftRed cursor-pointer font-bold mobile:text-sm text-Grayishblue desktop:text-xl">
             Home
           </li>
-          <li className="hover:text-SoftRed cursor-pointer font-bold text-sm text-Verydarkblue">
+          <li className="hover:text-SoftRed cursor-pointer font-bold mobile:text-sm text-Grayishblue desktop:text-xl">
             New
           </li>
-          <li className="hover:text-SoftRed cursor-pointer font-bold text-sm text-Verydarkblue">
+          <li className="hover:text-SoftRed cursor-pointer font-bold mobile:text-sm text-Grayishblue desktop:text-xl">
             Popular
           </li>
-          <li className="hover:text-SoftRed cursor-pointer font-bold text-sm text-Verydarkblue">
+          <li className="hover:text-SoftRed cursor-pointer font-bold mobile:text-sm text-Grayishblue desktop:text-xl">
             Trending
           </li>
-          <li className="hover:text-SoftRed cursor-pointer font-bold text-sm text-Verydarkblue">
+          <li className="hover:text-SoftRed cursor-pointer font-bold mobile:text-sm text-Grayishblue desktop:text-xl">
             Categories
           </li>
         </ul>
@@ -106,11 +106,11 @@ export default function Home() {
               alt="picture1"
               width={1000}
               height={50}
-              className="object-cover object-center desktop:object-contain"
+              className="object-cover object-center desktop:object-contain mobile:mb-10"
             />
           </div>
           <div className="desktop:flex desktop:w-full desktop:h-full desktop:mt-10">
-          <div className="font-extrabold mobile:text-4xl mb-5 desktop:flex-1 desktop:h-full desktop:w-2/5 desktop:text-5xl desktop:mr-20 desktop:flex desktop:justify-center">
+          <div className="font-extrabold mobile:text-4xl mb-5 desktop:flex-1 desktop:h-full desktop:w-2/5 desktop:text-6xl desktop:mr-20 desktop:flex desktop:justify-center desktop:leading">
               The Bright Future of Web 3.0?
             </div>
             <div className="desktop:w-3/6 desktop:flex desktop:flex-col desktop:justify-between">
@@ -123,7 +123,7 @@ export default function Home() {
                 {/* Button that could lead to more content */}
                 <button
                   type="button"
-                  className="bg-SoftRed mobile:py-3 mobile:px-10 font-bold tracking-widest hover:cursor-pointer desktop:text-xl"
+                  className="bg-SoftRed mobile:py-3 mobile:px-10 font-bold tracking-widest hover:cursor-pointer desktop:text-xl desktop:w-6/12"
                 >
                   Read More
                 </button>
@@ -138,24 +138,24 @@ export default function Home() {
         <div className="container2 mobile:mb-14 desktop:h-full desktop:w-full">
           <div className="bg-Verydarkblue px-5 py-5 desktop:h-full desktop:w-full desktop:flex desktop:flex-col ">
 
-            <div className="text-SoftOrange font-bold text-2xl mb-5 desktop:text-6xl desktop:mb-20">New</div>
-            <div className="text-OffWhite h-full desktop:flex desktop:flex-col desktop:justify-evenly">
-              <div className="mb-5 border-b-2 border-Darkgrayishblue pb-5">
+            <div className="text-SoftOrange font-bold text-2xl mobile:mb-5 desktop:text-8xl desktop:mb-10">New</div>
+            <div className="text-OffWhite h-full desktop:flex desktop:flex-col">
+              <div className="mb-5 border-b-2 border-Darkgrayishblue pb-5 desktop:pt-5">
                 <div className="title desktop:text-4xl">Hydrogen VS Electric Cars</div>
-                <div className="question text-Darkgrayishblue">
+                <div className="question text-Darkgrayishblue desktop:text-3xl  desktop:pt-5 desktop:mb-10">
                   Will hydrogen-fueled cars ever catch up to EVs?
                 </div>
               </div>
-              <div className="mb-5 border-b-2 border-Darkgrayishblue pb-5">
-                <div className="title desktop:text-4xl">The Downsides of AI Artistry</div>
-                <div className="question text-Darkgrayishblue">
+              <div className="mb-5 border-b-2 border-Darkgrayishblue pb-5 desktop:pt-5">
+                <div className="title desktop:text-4xl  desktop:pt-5">The Downsides of AI Artistry</div>
+                <div className="question text-Darkgrayishblue desktop:text-3xl  desktop:pt-5 desktop:mb-10">
                   What are the possible adverse effects of on-demand AI image
                   generation?
                 </div>
               </div>
-              <div>
-                <div className="title desktop:text-4xl">Is VC Funding Drying Up?</div>
-                <div className="question text-Darkgrayishblue">
+              <div className="desktop:pt-5">
+                <div className="title desktop:text-4xl  desktop:pt-5">Is VC Funding Drying Up?</div>
+                <div className="question text-Darkgrayishblue desktop:text-3xl  desktop:pt-5">
                   Private funding by VC firms is down 50% YOY. We take a look at
                   what that means.
                 </div>
