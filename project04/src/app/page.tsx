@@ -127,7 +127,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="container2 mb-14">
+      <div className="container2 mobile:mb-14 desktop:col-start-7 desktop:col-end-11 desktop:row-start-2 desktop:row-end-4 desktop:h-full bg-pink-500">
         <div className="bg-Verydarkblue px-5 py-5">
           <div className="text-SoftOrange font-bold text-2xl mb-5">New</div>
           <div className="text-OffWhite">
