@@ -34,9 +34,9 @@ function App() {
     fetchAdvice();
   };
   return (
-    <Fragment className="min-h-screen bg-blue">
-
-    </Fragment>
+    <div className='min-h-screen bg-neutral-blue950 '>
+      
+    </div>
   )
 }
 
