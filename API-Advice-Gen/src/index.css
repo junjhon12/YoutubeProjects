@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -11,6 +13,21 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Primary Colors */
+  --clr-primary-200: hsl(193, 38%, 86%); /* Blue 200 */
+  --clr-primary-300: hsl(150, 100%, 66%); /* Green 300 */
+
+  /* Neutral Colors */
+  --clr-neutral-600: hsl(217, 19%, 38%); /* Blue 600 */
+  --clr-neutral-900: hsl(217, 19%, 24%); /* Blue 900 */
+  --clr-neutral-950: hsl(218, 23%, 16%); /* Blue 950 */
+
+  /* Typography */
+  --ff-primary: 'Manrope', sans-serif;
+  --fw-bold: 800;
+
+  --fs-quote: 28px; /* Font size for quotes */
 }
 
 a {
@@ -23,31 +40,35 @@ a:hover {
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  font-family: var(--ff-primary);
+  background-color: var(--clr-neutral-950); /* Example: Dark background */
+  color: var(--clr-primary-200);          /* Example: Light text */
+  margin: 0; /* Reset default margin */
+  padding: 0; /* Reset default padding */
 }
-
+.Box-container {
+  background-color: hsl(217, 19%, 24%);
+}
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
 
 button {
-  border-radius: 8px;
+  border-radius: 100%;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  padding: 1.5em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: hsl(150, 100%, 66%);
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+    border-color: hsl(150, 100%, 66%);
+    background-size: 200%;
+    animation: ;
 }
 button:focus,
 button:focus-visible {
