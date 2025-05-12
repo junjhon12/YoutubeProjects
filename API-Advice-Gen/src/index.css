@@ -68,7 +68,6 @@ button {
 button:hover {
     border-color: hsl(150, 100%, 66%);
     background-size: 200%;
-    animation: ;
 }
 button:focus,
 button:focus-visible {

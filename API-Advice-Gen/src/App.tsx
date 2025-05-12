@@ -30,7 +30,7 @@ function App() {
   const [advice, setAdvice] = useState('');
   const [adviceId, setAdviceId] = useState('');
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<string | null>(null);
 
   const API_URL = "https://api.adviceslip.com/advice";
 
